@@ -5,13 +5,16 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "babel -d lib/ src/",
-    "prepublish": "npm run build",
+    "prepublish": "npm run snyk-protect && npm run build",
     "test": "tap test/*.js",
-    "watch": "babel -w -d lib/ src/"
+    "watch": "babel -w -d lib/ src/",
+    "snyk-protect": "snyk protect"
   },
   "author": "allex",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.4"
-  }
+    "lodash": "^4.17.4",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
